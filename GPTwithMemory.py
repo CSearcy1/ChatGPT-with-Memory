@@ -22,7 +22,7 @@ def append_conversation_to_file(filepath, user_text, ai_text):
 
 def chat_with_gpt(client, messages):
     response = client.chat.completions.create(
-        model="gpt-4-turbo-preview",
+        model="gpt-4o",
         messages=messages
     )
     resp_content = response.choices[0].message.content
@@ -34,7 +34,7 @@ def main():
     client = OpenAI(api_key=key)
     file_content = read_pretext("pretext.txt")
     
-    messages = [{"role": "system", "content": f"You are a helpful AI assistant. You are a Python teacher. Review {file_content}"}]
+    messages = [{"role": "system", "content": f"You are a helpful AI assistant. Review {file_content}"}]
     
     while True:
         user_input = input("User: ")

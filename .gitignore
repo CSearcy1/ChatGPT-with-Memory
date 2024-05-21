@@ -1,3 +1,4 @@
 *.txt
 Airline.py
 GeminiChat.py
+.devcontainer
